@@ -1,4 +1,4 @@
-const CACHE_NAME = 'escape-v3';
+const CACHE_NAME = 'escape-v4';
 const ASSETS = [
   '1.html',
   '2.html',
