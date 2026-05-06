@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,89 +9,37 @@
     <meta name="theme-color" content="#000000">
     <style>
         body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            color: #fff;
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            background-color: #000; color: #fff;
             font-family: 'Times New Roman', serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            cursor: pointer;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            overflow: hidden; cursor: pointer;
         }
-
-        .main-container {
-            text-align: center;
-            z-index: 10;
-            padding: 20px;
-        }
-
+        .main-container { text-align: center; z-index: 10; padding: 20px; }
         .logo-box img {
-            width: 100%;
-            max-width: 512px;
-            height: auto;
+            width: 100%; max-width: 512px; height: auto;
             filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
-            transition: transform 0.5s ease;
         }
-
         .author-name {
-            font-size: 1.8rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin: 20px 0;
-            font-weight: 300;
-            color: #ffffff;
-            border-bottom: 1px solid #333;
-            display: inline-block;
-            padding-bottom: 5px;
+            font-size: 1.8rem; letter-spacing: 5px; text-transform: uppercase;
+            margin: 20px 0; font-weight: 300; color: #ffffff;
+            border-bottom: 1px solid #333; display: inline-block; padding-bottom: 5px;
         }
-
         .title-brand {
-            font-size: 3.5rem;
-            font-weight: bold;
-            letter-spacing: 12px;
-            margin: 10px 0 0 0;
-            color: #fff;
+            font-size: 3.5rem; font-weight: bold; letter-spacing: 12px;
+            margin: 10px 0 0 0; color: #fff;
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
-
-        .subtitle {
-            font-size: 1.3rem;
-            font-style: italic;
-            color: #888;
-            margin-top: 5px;
-            letter-spacing: 2px;
-        }
-
-        /* Efeito de pulso para indicar interação */
+        .subtitle { font-size: 1.3rem; font-style: italic; color: #888; margin-top: 5px; letter-spacing: 2px; }
         .tap-to-read {
-            position: absolute;
-            bottom: 40px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            opacity: 0.5;
+            position: absolute; bottom: 40px; font-size: 0.9rem;
+            text-transform: uppercase; letter-spacing: 4px; opacity: 0.5;
             animation: pulse 2s infinite;
         }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 0.8; }
-        }
-
-        /* Animação sutil de entrada */
-        .fade-in {
-            animation: fadeIn 2s ease-in forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.8; } }
+        .fade-in { animation: fadeIn 2s ease-in forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body onclick="window.location.href='1.html'">
@@ -99,9 +48,7 @@
         <div class="logo-box">
             <img src="logo-512.png" alt="ESCAPE Logo">
         </div>
-        
         <div class="author-name">Gilberto Moreira</div>
-        
         <h1 class="title-brand">ESCAPE!</h1>
         <div class="subtitle">Antes que venha a paz!</div>
     </div>
@@ -109,22 +56,13 @@
     <div class="tap-to-read">Toque para iniciar a vigilância</div>
 
     <script>
-        // Registro do Service Worker para PWA
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js')
-                    .then(reg => console.log('SW registrado!', reg))
+                    .then(reg => console.log('ESCAPE! Offline pronto.'))
                     .catch(err => console.log('Erro no SW', err));
             });
         }
     </script>
-    <link rel="manifest" href="manifest.json">
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(() => console.log("ESCAPE! registrado via index.html"))
-      .catch(err => console.log("Erro:", err));
-  }
-</script>
 </body>
 </html>
