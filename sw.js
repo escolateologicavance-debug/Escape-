@@ -9,6 +9,7 @@ const ASSETS = [
   'produtos.html',
   'logo-512.png',
   'perfil.png',
+  'escape.mp4',
   'manifest.json'
 ];
 
