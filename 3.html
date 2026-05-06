@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo II — O Cavaleiro do Arco</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Fundo Branco conforme solicitado */
+            color: #1a1a1a;
+            font-family: 'Times New Roman', serif;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content-wrapper {
+            max-width: 700px;
+            width: 90%;
+            padding: 40px 20px;
+        }
+
+        .back-link {
+            color: #888;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .module-head {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+
+        h2 { font-size: 1.6rem; letter-spacing: 1px; margin: 5px 0; color: #000; text-transform: uppercase; }
+
+        .narration-controls {
+            background: #f9f9f9;
+            border: 1px solid #eee;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background: #000;
+            border: 1px solid #000;
+            color: #fff;
+            padding: 12px 25px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        button:hover { background: #333; }
+
+        .scripture-highlight {
+            font-style: italic;
+            color: #444;
+            border-left: 4px solid #000;
+            padding: 15px 20px;
+            margin: 30px 0;
+            background: #fcfcfc;
+        }
+
+        h3 { 
+            font-size: 1.2rem; 
+            color: #000; 
+            margin-top: 40px; 
+            border-bottom: 1px solid #eee; 
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        p { text-align: justify; margin-bottom: 20px; text-indent: 1.5em; }
+
+        .bold { font-weight: bold; }
+
+        footer { margin-top: 50px; text-align: center; padding-bottom: 50px; opacity: 0.6; font-size: 0.75rem; color: #888; }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <a href="1.html" class="back-link">← Menu Principal</a>
+
+        <div class="module-head">
+            <span style="font-size: 0.7rem; letter-spacing: 4px; color: #aaa;">MÓDULO II</span>
+            <h2>O CAVALEIRO DO ARCO (A CONQUISTA SEM SANGUE)</h2>
+        </div>
+
+        <div class="narration-controls">
+            <button id="btnPlay" onclick="toggleSpeech()">Ouvir Matéria</button>
+        </div>
+
+        <div id="text-content">
+            <div class="scripture-highlight">
+                “E olhei, e eis um cavalo branco; e o que estava assentado sobre ele tinha um arco; e foi-lhe dada uma coroa, e saiu vitorioso e para vencer.”
+                <br>— Apocalipse 6 2
+            </div>
+
+            <p>Diferente do que muitos imaginam, a abertura dos selos proféticos não se inicia com um estrondo de guerra visível, mas com a manifestação de uma autoridade que cavalga sob o signo da <span class="bold">vitória diplomática</span>. O primeiro cavaleiro do Apocalipse surge em um cavalo branco, a cor da pureza e da paz, mas sua intenção é o domínio absoluto.</p>
+
+            <h3>O ARCO SEM FLECHAS: O PODER DA PERSUASÃO</h3>
+            <p>Um detalhe teológico fundamental em Apocalipse 6 2 é que o cavaleiro porta um <span class="bold">arco</span>, porém as Escrituras não mencionam flechas. Isso simboliza uma conquista realizada sem o derramamento de sangue inicial. É a vitória da ideologia, do carisma e da diplomacia sobre a força bruta. </p>
+            <p>Ele não invade nações; ele é convidado a liderá-las. Este cavaleiro representa a personificação das soluções humanistas para as crises globais, estabelecendo uma hegemonia baseada em tratados e no convencimento das massas que, sedentas por ordem, entregarão sua soberania em troca de estabilidade.</p>
+
+            <h3>A COROA (STEPHANOS) E A LEGITIMIDADE HUMANA</h3>
+            <p>O texto afirma que ao cavaleiro "foi-lhe dada uma coroa". O termo grego utilizado é <span class="bold">stephanos</span>, a coroa de louros dada aos vencedores de competições ou méritos humanos, e não <span class="bold">diadema</span>, que seria a coroa de realeza divina. Isso reforça que seu poder emana da terra, do reconhecimento político e da aclamação social.</p>
+            <p>Ele sai "vitorioso e para vencer", indicando um processo de expansão contínua. Sua autoridade será consolidada pela capacidade de resolver o que o mundo considera insolúvel, preparando o terreno para a falsa paz que discutimos anteriormente.</p>
+
+            <h3>A ESTRATÉGIA DO DOMÍNIO GLOBAL</h3>
+            <p>Este movimento alinha-se perfeitamente com a estratégia maquiavélica de um governo mundial unificado. Enquanto a Igreja Arrebatada não está mais presente para oferecer resistência espiritual, o mundo se curva diante da eficiência deste sistema. É o domínio através da "calmaria" que precede a tempestade dos selos seguintes.</p>
+
+            <p>Portanto, o Cavaleiro do Arco não é um destruidor de cidades, mas um construtor de impérios invisíveis, prendendo a humanidade em uma rede de dependência institucional antes que a verdadeira face do julgamento seja revelada.</p>
+        </div>
+
+        <footer>
+            GILBERTO MOREIRA — ESCAPE!
+        </footer>
+    </div>
+
+    <script>
+        let isSpeaking = false;
+        const synth = window.speechSynthesis;
+
+        function speakChunks(text) {
+            const chunkSize = 200;
+            const chunks = [];
+            for (let i = 0; i < text.length; i += chunkSize) {
+                chunks.push(text.substring(i, i + chunkSize));
+            }
+
+            let index = 0;
+            function speakNext() {
+                if (index >= chunks.length || !isSpeaking) {
+                    isSpeaking = false;
+                    document.getElementById('btnPlay').innerText = "Ouvir Matéria";
+                    return;
+                }
+
+                const utterance = new SpeechSynthesisUtterance(chunks[index]);
+                utterance.lang = 'pt-BR';
+                utterance.rate = 1.0;
+                utterance.onend = () => {
+                    index++;
+                    speakNext();
+                };
+                synth.speak(utterance);
+            }
+            speakNext();
+        }
+
+        function toggleSpeech() {
+            const btn = document.getElementById('btnPlay');
+            if (isSpeaking) {
+                synth.cancel();
+                isSpeaking = false;
+                btn.innerText = "Ouvir Matéria";
+            } else {
+                synth.cancel();
+                let text = document.getElementById('text-content').innerText;
+                text = text.replace(/[:]/g, ' ');
+                isSpeaking = true;
+                btn.innerText = "Parar Narração";
+                speakChunks(text);
+            }
+        }
+    </script>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+</html>

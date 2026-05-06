@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Produtos - ESCAPE!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Times New Roman', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #222;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .welcome-message {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .product-link-container {
+            margin: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 20px 30px;
+            border: 1px solid #fff;
+            background-color: #0a0a0a;
+            transition: all 0.4s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .signature {
+            margin-top: 50px;
+            font-size: 1rem;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .origin-tag {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: #444;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .back-nav {
+            margin-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #555;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #888;
+            border-color: #333;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #333;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Nossos Produtos</h1>
+        
+        <div class="welcome-message">
+            Os Cursos e demais Produtos você pode adquirir clicando abaixo. 
+            Escolha seu Curso, Livro ou outro Produto, faça sua matrícula e bom estudo!
+        </div>
+
+        <div class="product-link-container">
+            <a href="https://drive.google.com/file/d/1pCJPL12i6F7BcU93YjjEaBLdhaXYatnd/view?usp=drivesdk" target="_blank" class="cta-button">
+                Acessar Catálogo e Matrícula
+            </a>
+        </div>
+
+        <div class="signature">
+            Que Deus te abençoe sempre!<br>
+            <strong>Gilberto Moreira</strong>
+            <div class="origin-tag">Made in Brazil</div>
+        </div>
+
+        <div class="back-nav">
+            <a href="1.html" class="back-link">Voltar ao Menu Principal</a>
+        </div>
+    </div>
+
+    <footer>
+        ESCAPE! - Direitos Reservados
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+</html>

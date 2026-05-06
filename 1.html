@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCAPE! - Menu Principal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Times New Roman', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 8px;
+            margin: 0;
+            color: #fff;
+        }
+
+        .author-tag {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        nav {
+            width: 90%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #555;
+            margin: 25px 0 10px 10px;
+            display: block;
+        }
+
+        .menu-item {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 18px;
+            margin-bottom: 10px;
+            border: 1px solid #1a1a1a;
+            background: #050505;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            border-color: #444;
+            background: #111;
+        }
+
+        .chapter-num {
+            display: block;
+            font-size: 0.65rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .chapter-title {
+            display: block;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Estilo para as tags de Informação */
+        .info-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #888;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border: 1px border: 1px solid #222;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .info-link:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .info-section {
+            text-align: center;
+            margin-top: 20px;
+            padding-bottom: 40px;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        /* VLibras */
+        .vlibras-container { z-index: 999; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ESCAPE!</h1>
+        <div class="author-tag">Gilberto Moreira</div>
+    </header>
+
+    <nav>
+        <span class="section-label">Conteúdo Escatológico</span>
+        
+        <a href="2.html" class="menu-item">
+            <span class="chapter-num">Módulo I</span>
+            <span class="chapter-title">O Prenúncio (A Ilusão)</span>
+        </a>
+
+        <a href="3.html" class="menu-item">
+            <span class="chapter-num">Módulo II</span>
+            <span class="chapter-title">O Cavaleiro do Arco</span>
+        </a>
+
+        <a href="4.html" class="menu-item">
+            <span class="chapter-num">Módulo III</span>
+            <span class="chapter-title">A Destruição Repentina</span>
+        </a>
+
+        <span class="section-label">Institucional</span>
+        <div class="info-section">
+            <a href="autor.html" class="info-link">Sobre o Autor</a>
+            <a href="produtos.html" class="info-link">Nossos Produtos</a>
+        </div>
+    </nav>
+
+    <footer>
+        1 Tessalonicenses 5:3 (ARC)
+    </footer>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+          .then(() => console.log("ESCAPE! pronto para uso offline."))
+          .catch(err => console.log("Erro no Service Worker:", err));
+      }
+    </script>
+</body>
+</html>
+
